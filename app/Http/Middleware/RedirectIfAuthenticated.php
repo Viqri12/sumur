@@ -23,7 +23,17 @@ class RedirectIfAuthenticated
 
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
-                return redirect(RouteServiceProvider::HOME);
+                if(auth()->user()->hasRole('admin')){
+                    return redirect('admin/dashboard');
+                   }
+            
+                   if(auth()->user()->hasRole('kepala')){
+                    return redirect('kepala/dashboard');
+                   }
+            
+                   if(auth()->user()->hasRole('mandor')){
+                    return redirect('mandor/dashboard');
+                   }
             }
         }
 
