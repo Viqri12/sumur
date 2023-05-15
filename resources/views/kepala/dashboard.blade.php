@@ -1,21 +1,10 @@
 <x-app-layout>
   <div class="layout-wrapper layout-content-navbar">
     <div class="layout-container">
-      <!-- Menu -->
         @include('layouts.sidebar.KepalaSidebar')
-    
-      <!-- / Menu -->
-
-      <!-- Layout container -->
       <div class="layout-page">
-        <!-- Navbar -->
         @include('layouts.navbar.KepalaNavbar')
-
-        <!-- / Navbar -->
-
-        <!-- Content wrapper -->
         <div class="content-wrapper">
-          <!-- Content -->
 
           <div class="container-xxl flex-grow-1 container-p-y">
             <div class="row">

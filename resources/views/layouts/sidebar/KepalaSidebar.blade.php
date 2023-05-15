@@ -51,7 +51,7 @@
         <span class="menu-header-text">Dashboard</span>
       </li>
       <li class="menu-item ">
-        <a href="" class="menu-link">
+        <a href="{{ route('kepala.dashboard_kepala')}}" class="menu-link">
           <i class="menu-icon tf-icons bx bx-home-circle"></i>
           <div data-i18n="Analytics">Dashboard</div>
         </a>
@@ -68,19 +68,19 @@
           </a>
         </li>
         <li class="menu-item ">
-          <a href="" class="menu-link">
+          <a href="{{ route('kepala.mandor') }}" class="menu-link">
             <i class="fa-solid fa-helmet-safety me-3"></i>
             <div data-i18n="Analytics">Mandor</div>
           </a>
         </li>
         <li class="menu-item ">
-          <a href="" class="menu-link">
-            <i class="fa-solid fa-list-check me-3"></i>
+          <a href="{{ route('kepala.tugas') }}" class="menu-link">
+            <i class="fa-solid fa-book me-3"></i>
             <div data-i18n="Analytics">Tugas</div>
           </a>
         </li>
         <li class="menu-item ">
-          <a href="" class="menu-link">
+          <a href="{{ route('kepala.role_akses') }}" class="menu-link">
             <i class="menu-icon tf-icons bx bx-home-circle"></i>
             <div data-i18n="Analytics">Role Akses</div>
           </a>

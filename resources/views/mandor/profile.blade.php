@@ -1,9 +1,9 @@
 <x-app-layout>
     <div class="layout-wrapper layout-content-navbar">
         <div class="layout-container">
-            @include('layouts.sidebar.KepalaSidebar')
+            @include('layouts.sidebar.MandorSidebar')
           <div class="layout-page">
-            @include('layouts.navbar.KepalaNavbar')
+            @include('layouts.navbar.MandorNavbar')
             <div class="content-wrapper">
 
 
