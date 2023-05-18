@@ -67,6 +67,12 @@
         </a>
       </li>
       <li class="menu-item ">
+        <a href="{{ route('mandor.tugas') }}" class="menu-link">
+          <i class="fa-solid fa-book me-3"></i>
+          <div data-i18n="Analytics">Tugas di tolak</div>
+        </a>
+      </li>
+      <li class="menu-item ">
         <a href="{{ route('mandor.riwayat_tugas') }}" class="menu-link">
           <i class="fa-solid fa-list-check me-3"></i>
           <div data-i18n="Analytics">Riwayat Tugas</div>

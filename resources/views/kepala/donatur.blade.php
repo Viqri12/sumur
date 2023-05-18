@@ -6,7 +6,9 @@
             @include('layouts.navbar.KepalaNavbar')
             <div class="content-wrapper">
 
-
+                <ul>
+                    <li></li>
+                </ul>
             </div>
           </div>
         </div>
