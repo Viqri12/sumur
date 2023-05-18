@@ -61,12 +61,12 @@
         <span class="menu-header-text">Pages</span>
       </li>
       <div class="align-items-center ms-3">
-        <li class="menu-item ">
+        {{-- <li class="menu-item ">
           <a href="{{ route('kepala.donatur') }}" class="menu-link">
             <i class="fa-solid fa-user-tie me-3"></i>
             <div data-i18n="Analytics">Donatur</div>
           </a>
-        </li>
+        </li> --}}
         <li class="menu-item ">
           <a href="{{ route('kepala.mandor') }}" class="menu-link">
             <i class="fa-solid fa-helmet-safety me-3"></i>
@@ -80,12 +80,24 @@
           </a>
         </li>
         <li class="menu-item ">
+            <a href="{{ route('kepala.tugas') }}" class="menu-link">
+              <i class="fa-solid fa-book me-3"></i>
+              <div data-i18n="Analytics">Tugas di tolak</div>
+            </a>
+          </li>
+        <li class="menu-item ">
+            <a href="{{ route('kepala.tugas') }}" class="menu-link">
+              <i class="fa-solid fa-book me-3"></i>
+              <div data-i18n="Analytics">Tagihan</div>
+            </a>
+          </li>
+        <li class="menu-item ">
           <a href="{{ route('kepala.role_akses') }}" class="menu-link">
-            <i class="menu-icon tf-icons bx bx-home-circle"></i>
-            <div data-i18n="Analytics">Role Akses</div>
+            <i class="fa-solid fa-list-check me-3"></i>
+            <div data-i18n="Analytics">Riwayat Tugas</div>
           </a>
         </li>
       </div>
-     
+
         <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; right: 4px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></ul>
   </aside>

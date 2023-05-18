@@ -7,6 +7,13 @@
             <div class="content-wrapper">
 
 
+                <ul>
+                    <li>Alamat</li>
+                    <li>Nama donatur</li>
+                    <li>nomor sumur</li>
+                    <li>cetak banner</li>
+                </ul>
+
             </div>
           </div>
         </div>
