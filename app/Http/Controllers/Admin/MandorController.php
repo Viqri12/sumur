@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\kepala;
+use App\Models\mandor;
+use App\Models\User;
 
 class MandorController extends Controller
 {
@@ -14,7 +17,9 @@ class MandorController extends Controller
      */
     public function index()
     {
-        return view('admin.mandor.mandor');
+        $data = mandor::with('user')->get();
+        return $data;
+        return view('admin.mandor.mandor',compact('data'));
     }
 
     /**

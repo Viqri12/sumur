@@ -17,7 +17,8 @@ class KepalaController extends Controller
      */
     public function index()
     {
-        $data = kepala::all();
+        $data = kepala::with('user')->get();
+        // return $data;
         return view('admin.kepala.kepala',compact('data'));
     }
 
@@ -28,7 +29,8 @@ class KepalaController extends Controller
      */
     public function create()
     {
-        return view('admin.kepala.tambah_data');
+        $data = User::all();
+        return view('admin.kepala.tambah_data',compact('data'));
     }
 
     /**
@@ -39,16 +41,19 @@ class KepalaController extends Controller
      */
     public function store(Request $request)
     {
+        // return $request;
        $validator = $request->validate([
         'name' => 'required',
         'email' => 'required',
-        'password' => 'required'
+        'password' => 'required',
+        'user_id' => 'required'
        ]);
     
        $users = kepala::create([
         'name' => $request->name,
         'email' => $request->email,
-        'password' => hash::make('adminpassword')
+        'password' => hash::make('adminpassword'),
+        'user_id' => $request->user_id
        ]);
 
        return redirect('admin/kepala');
@@ -74,7 +79,7 @@ class KepalaController extends Controller
     public function edit($id)
     {
         $data = kepala::where('id',$id)->get();
-        return view('admin.kepala.edit_kepala',compact('data'));
+        return view('admin.kepala.edit_kepala',compact('data','id'));
     }
 
     /**

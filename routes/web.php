@@ -21,7 +21,6 @@ Route::get('/', function () {
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::group(['middleware' => ['role:admin', 'auth']], function () {
         Route::get('/dashboard',[\App\Http\Controllers\Admin\DashboardController::class,'index'])->name('dashboard');
-        Route::get('/donatur',[\App\Http\Controllers\Admin\DonaturController::class,'index'])->name('donatur');
         Route::get('/kepala',[\App\Http\Controllers\Admin\KepalaController::class,'index'])->name('kepala');
         Route::get('/mandor',[\App\Http\Controllers\Admin\MandorController::class,'index'])->name('mandor');
         Route::get('/role_akses',[\App\Http\Controllers\Admin\RoleAksesController::class,'index'])->name('role_akses');
