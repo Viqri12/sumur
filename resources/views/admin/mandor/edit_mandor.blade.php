@@ -6,11 +6,12 @@
             @include('layouts.navbar.AdminNavbar')
             <div class="content-wrapper">
                 <div class="container">
-                    <h4 class=" mt-4">Tambah Data Kepala</h4>
+                    <h4 class="mt-4">Edit Data Mandor</h4>
                     <div class="row">
                         <div class="col-10 bg-white">
-                            <form class="mt-4" action="{{ route('admin.tambah_data_store')}}" method="POST">
+                            <form class="mt-4" action="{{ route('admin.update_mandor')}}" method="POST">
                                 @csrf
+                                <input type="hidden" name="id" value="{{$id}}">
                                 <div class="col-8">
                                 <div class="mb-3">
                                     <label for="name" class="form-label">nama</label>
@@ -24,15 +25,7 @@
                                   <label for="password" class="form-label">Password</label>
                                   <input type="password" name="password" class="form-control" id="password" placeholder="Masukan Password">
                                 </div>
-                                <div class=" mb-6 flex flex-col">
-                                  <label for="nama_vendor" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama Kepala</label>
-                                  <select class="w-80" name="user_id" id="">
-                                      <option value="" disabled selected>Pilih Kepala</option>
-                                     @foreach($data as $item)
-                                        <option value="{{$item->id}}">{{$item->name}}</option>
-                                     @endforeach
-                                  </select>
-                              </div>
+                               
                                   <button type="submit" class="btn btn-primary mb-5">Submit</button>
                                 </div>
                               </form>
@@ -41,7 +34,7 @@
                     </div>
                 </div>
 
-            </div>
+            </div> 
           </div>
         </div>
     </div>

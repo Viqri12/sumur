@@ -6,12 +6,13 @@
             @include('layouts.navbar.AdminNavbar')
             <div class="content-wrapper">
                 <div class="container">
-                    <h1 class="text-center mt-4">Edit Data Kepala</h1>
+                    <h4 class="mt-4">Edit Data Kepala</h4>
                     <div class="row">
-                        <div class="col-8 mx-auto">
-                            <form action="{{ route('admin.kepala_update')}}" method="POST">
+                        <div class="col-10 bg-white">
+                            <form class="mt-4" action="{{ route('admin.kepala_update')}}" method="POST">
                                 @csrf
                                 <input type="hidden" name="id" value="{{$id}}">
+                                <div class="col-8">         
                                 <div class="mb-3">
                                     <label for="name" class="form-label">nama</label>
                                     <input type="text" name="name" class="form-control" id="name" placeholder="Masukan Nama">
@@ -26,6 +27,7 @@
                                 </div>
                                
                                   <button type="submit" class="btn btn-primary mb-5">Submit</button>
+                                </div>
                               </form>
                             
                         </div>

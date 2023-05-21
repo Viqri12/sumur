@@ -29,6 +29,11 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::post('/tambah_data_store',[\App\Http\Controllers\Admin\KepalaController::class,'store'])->name('tambah_data_store');
         Route::get('/edit_kepala/{id}',[\App\Http\Controllers\Admin\KepalaController::class,'edit'])->name('edit_kepala');
         Route::post('/edit_kepala_update',[\App\Http\Controllers\Admin\KepalaController::class,'update'])->name('kepala_update');
+        Route::get('/tambah_mandor',[\App\Http\Controllers\Admin\MandorController::class,'create'])->name('tambah_mandor');
+        Route::post('/tambah_mandor_store',[\App\Http\Controllers\Admin\MandorController::class,'store'])->name('tambah_mandor_store');
+        Route::post('/delete_mandor/{id}',[\App\Http\Controllers\Admin\MandorController::class,'destroy'])->name('delete_mandor');
+        Route::get('/edit_mandor/{id}',[\App\Http\Controllers\Admin\MandorController::class,'edit'])->name('edit_mandor');
+        Route::post('/update_mandor',[\App\Http\Controllers\Admin\MandorController::class,'update'])->name('update_mandor');
     });
 });
 

@@ -20,7 +20,7 @@ class KepalaController extends Controller
         $data = kepala::with('user')->get();
         // return $data;
         return view('admin.kepala.kepala',compact('data'));
-    }
+    } 
 
     /**
      * Show the form for creating a new resource.

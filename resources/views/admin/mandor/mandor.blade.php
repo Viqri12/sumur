@@ -8,7 +8,7 @@
                 <div class="container">
                   <div class="row p-4 mt-5">
                       <div class="col-md-12 bg-white shadow table-responsive rounded-5">
-                          <a class="btn btn-primary mb-4 my-3" href="{{ route('admin.tambah_data') }}">Tambah Client</a>
+                          <a class="btn btn-primary mb-4 my-3" href="{{ route('admin.tambah_mandor') }}">Tambah Client</a>
                           <table class="table">
                               <thead>
                                 <tr>
@@ -26,10 +26,10 @@
                                       <td>{{$item->name}}</td>
                                       <td>{{$item->email}}</td>
                                       <td class="d-flex justify-content-between align-items-center col-5 ">
-                                        <a class="m-1" href="{{ route('admin.edit_kepala',$item->id)}}">
+                                        <a class="m-1" href="{{ route('admin.edit_mandor',$item->id)}}">
                                           <i class="fa-solid fa-pen-to-square"></i>
                                         </a>
-                                        <form action="{{ route('admin.destroy',$item->id) }}" method="POST">
+                                        <form action="{{ route('admin.delete_mandor',$item->id) }}" method="POST">
                                           @csrf
                                           <button class="m-1 border-0 bg-transparent text-danger" type="submit">
                                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
