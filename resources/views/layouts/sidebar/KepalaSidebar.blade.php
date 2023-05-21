@@ -31,7 +31,7 @@
       <div class="align-items-center ms-3">
         {{-- <li class="menu-item ">
           <a href="{{ route('kepala.donatur') }}" class="menu-link">
-            <i class="fa-solid fa-user-tie me-3"></i>
+            <i class="fa-solid fa-user-secret me-3"></i>
             <div data-i18n="Analytics">Donatur</div>
           </a>
         </li> --}}
