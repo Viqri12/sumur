@@ -1,9 +1,9 @@
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme" data-bg-class="bg-menu-theme">
     <div class="app-brand demo">
-      <a href="{{ route('kepala.dashboard_kepala')}}" class="app-brand-link">
+      <a href="{{ route('kepala.dashboard_kepala')}}" class=" text-dark">
         <span class="app-brand-logo d-flex align-items-center demo">
           <img src="{{ asset('assets/img/logo.png')}}" width="30" alt="">
-          <span class="fw-bold app-brand-text ms-2">Tebar Senyum</span>
+          <span class="fw-bold fs-4 ms-2">Tebar Senyum</span>
       </a>
 
       <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-xl-none">
