@@ -9,7 +9,7 @@ class kepala extends Model
 {
     use HasFactory;
     protected $table = "kepala";
-    protected $fillable = ['kepala_id','user_id','name','email','password'];
+    protected $fillable = ['user_id','nama','alamat','no_hp'];
 
     public function user()
     {

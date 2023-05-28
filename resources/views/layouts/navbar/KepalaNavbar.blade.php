@@ -7,11 +7,8 @@
 
     <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
       <!-- Search -->
-      <div class="navbar-nav align-items-center">
-        <div class="nav-item d-flex align-items-center">
-          <i class="bx bx-search fs-4 lh-0"></i>
-          <input type="text" class="form-control border-0 shadow-none" placeholder="Search..." aria-label="Search...">
-        </div>
+      <div class="navbar-nav pt-2 align-items-center">
+       <h4>Dashboard</h4>
       </div>
       <!-- /Search -->
 
@@ -38,8 +35,8 @@
                     </div>
                   </div>
                   <div class="flex-grow-1">
-                    <span class="fw-semibold d-block">John Doe</span>
-                    <small class="text-muted">Admin</small>
+                    <span class="fw-semibold d-block">{{ auth()->user()->name }}</span>
+                    <small class="text-muted">{{ auth()->user()->roles[0]->name }}</small>
                   </div>
                 </div>
               </a>

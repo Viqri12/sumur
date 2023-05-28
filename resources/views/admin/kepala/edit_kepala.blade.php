@@ -8,33 +8,39 @@
                 <div class="container">
                     <h4 class="mt-4">Edit Data Kepala</h4>
                     <div class="row">
-                        <div class="col-10 bg-white">
+                        <div class="col-lg-6 bg-white">
                             <form class="mt-4" action="{{ route('admin.kepala_update')}}" method="POST">
                                 @csrf
-                                <input type="hidden" name="id" value="{{$id}}">
-                                <div class="col-8">         
-                                <div class="mb-3">
-                                    <label for="name" class="form-label">nama</label>
-                                    <input type="text" name="name" class="form-control" id="name" placeholder="Masukan Nama">
-                                </div>
-                                <div class="mb-3">
-                                  <label for="nama" class="form-label">Email address</label>
-                                  <input type="email" name="email" class="form-control" id="Email1" aria-describedby="emailHelp" placeholder="Masukan email">
-                                </div>
-                                <div class="mb-3">
-                                  <label for="password" class="form-label">Password</label>
-                                  <input type="password" name="password" class="form-control" id="password" placeholder="Masukan Password">
-                                </div>
-                               
-                                  <button type="submit" class="btn btn-primary mb-5">Submit</button>
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label">Nama</label>
+                                        <input type="text" name="name" class="form-control" value="{{ $data->user->name }}" id="name" placeholder="Masukan Nama">
+                                        @error('name')<p class="small text-danger">{{$message}}</p>@enderror
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="nama" class="form-label">Email</label>
+                                        <input type="email" name="email" class="form-control" value="{{ $data->user->email }}" id="Email1" aria-describedby="emailHelp" placeholder="Masukan email">
+                                        @error('email')<p class="small text-danger">{{$message}}</p>@enderror
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="nama" class="form-label">No Ho</label>
+                                        <input type="number" name="no_hp" class="form-control" value="{{ $data->no_hp }}" id="Email1" aria-describedby="emailHelp" placeholder="Nomor HP">
+                                        @error('no_hp')<p class="small text-danger">{{$message}}</p>@enderror
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="alamat" class="form-label">Alamat</label>
+                                        <textarea name="alamat" class="form-control" id="" cols="5" rows="6" placeholder="Alamat">{{ $data->alamat }}</textarea>
+                                        @error('alamat')<p class="small text-danger">{{$message}}</p>@enderror
+                                    </div>
+                                    <a href="{{ route('admin.kepala')}}" class="btn btn-light border mb-5">Batal</a>
+                                   <button type="submit" class="btn ms-2 btn-primary mb-5">Simpan</button>
                                 </div>
                               </form>
-                            
                         </div>
                     </div>
                 </div>
 
-            </div> 
+            </div>
           </div>
         </div>
     </div>
