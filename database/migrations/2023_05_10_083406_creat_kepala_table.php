@@ -15,10 +15,11 @@ return new class extends Migration
     {
         Schema::create('kepala', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('nama');
+            $table->string('alamat')->nullable();
+            $table->string('no_hp')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->timestamps();
             $table->timestamps();
         });
     }
