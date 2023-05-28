@@ -34,6 +34,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::post('/delete_mandor/{id}',[\App\Http\Controllers\Admin\MandorController::class,'destroy'])->name('delete_mandor');
         Route::get('/edit_mandor/{id}',[\App\Http\Controllers\Admin\MandorController::class,'edit'])->name('edit_mandor');
         Route::post('/update_mandor',[\App\Http\Controllers\Admin\MandorController::class,'update'])->name('update_mandor');
+        Route::get('/profile',[\App\Http\Controllers\Admin\ProfileController::class,'index'])->name('profile');
+        Route::post('/update_profile',[\App\Http\Controllers\Admin\ProfileController::class,'store'])->name('update_profile');
     });
 });
 
