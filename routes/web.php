@@ -24,7 +24,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::get('/kepala',[\App\Http\Controllers\Admin\KepalaController::class,'index'])->name('kepala');
         Route::get('/mandor',[\App\Http\Controllers\Admin\MandorController::class,'index'])->name('mandor');
         Route::get('/role_akses',[\App\Http\Controllers\Admin\RoleAksesController::class,'index'])->name('role_akses');
-        Route::post('/destroy/{id}',[\App\Http\Controllers\Admin\KepalaController::class,'destroy'])->name('destroy');
+        Route::get('/destroy/{id}',[\App\Http\Controllers\Admin\KepalaController::class,'destroy'])->name('destroy');
         Route::get('/tambah_data',[\App\Http\Controllers\Admin\KepalaController::class,'create'])->name('tambah_data');
         Route::post('/tambah_data_store',[\App\Http\Controllers\Admin\KepalaController::class,'store'])->name('tambah_data_store');
         Route::get('/edit_kepala/{id}',[\App\Http\Controllers\Admin\KepalaController::class,'edit'])->name('edit_kepala');
@@ -48,7 +48,7 @@ Route::group(['prefix' => 'kepala', 'as' => 'kepala.'], function () {
         Route::get('/role_akses',[\App\Http\Controllers\kepala\RoleAksesController::class,'index'])->name('role_akses');
         Route::get('/profile',[\App\Http\Controllers\kepala\ProfileController::class,'index'])->name('profile');
     });
-});     
+});
 
 Route::group(['prefix' => 'mandor', 'as' => 'mandor.'], function () {
     Route::group(['middleware' => ['role:mandor', 'auth']], function () {

@@ -131,11 +131,16 @@ class KepalaController extends Controller
      */
     public function destroy($id)
     {
-        $delete = kepala::find($id)->delete();
+        // try {
+            $cek = kepala::where('id',$id)->first();
+            // return $cek;
+            User::where('id',$cek->user_id)->delete();
+            Alert::success('Berhasil','Data berhasil di hapus');
+            return back();
+        // } catch (\Throwable $th) {
+        //     Alert::error('Gagal','Sepertinya ada yang salah');
+        //    return back();
+        // }
 
-        if($delete){
-            return redirect()->route('admin.kepala')->with('success' , 'Berhasil di hapus');
-          }
-         return redirect()->route('admin.kepala')->with('error' , 'User gagal hapus');
     }
 }
