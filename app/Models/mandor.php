@@ -9,7 +9,7 @@ class mandor extends Model
 {
     use HasFactory;
     protected $table = "mandor";
-    protected $fillable = ['mandor_id','user_id','name','email','password'];
+    protected $fillable = ['user_id','nama','alamat','no_hp'];
 
     public function user()
     {

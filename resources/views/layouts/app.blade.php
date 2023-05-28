@@ -24,6 +24,7 @@
         <link rel="stylesheet" href="{{ asset('/assets/vendor/libs/apex-charts/apex-charts.css') }}" />
         <script src="{{ asset('/assets/vendor/js/helpers.js') }}"></script>
         <script src="{{ asset('/assets/js/config.js') }}"></script>
+        @include('sweetalert::alert')
         {{-- <link rel="stylesheet" href="{{ asset('css/app.css')}}"> --}}
     </head>
     <body class="font-sans antialiased">
@@ -33,6 +34,7 @@
                 {{ $slot }}
             </main>
     </body>
+    @include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
     <script src="{{ asset('js/app.js')}}"></script>
      <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
