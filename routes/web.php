@@ -21,7 +21,6 @@ Route::get('/', function () {
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::group(['middleware' => ['role:admin', 'auth']], function () {
         Route::get('/dashboard',[\App\Http\Controllers\Admin\DashboardController::class,'index'])->name('dashboard');
-        Route::get('/donatur',[\App\Http\Controllers\Admin\DonaturController::class,'index'])->name('donatur');
         Route::get('/kepala',[\App\Http\Controllers\Admin\KepalaController::class,'index'])->name('kepala');
         Route::get('/mandor',[\App\Http\Controllers\Admin\MandorController::class,'index'])->name('mandor');
         Route::get('/role_akses',[\App\Http\Controllers\Admin\RoleAksesController::class,'index'])->name('role_akses');
@@ -30,6 +29,11 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::post('/tambah_data_store',[\App\Http\Controllers\Admin\KepalaController::class,'store'])->name('tambah_data_store');
         Route::get('/edit_kepala/{id}',[\App\Http\Controllers\Admin\KepalaController::class,'edit'])->name('edit_kepala');
         Route::post('/edit_kepala_update',[\App\Http\Controllers\Admin\KepalaController::class,'update'])->name('kepala_update');
+        Route::get('/tambah_mandor',[\App\Http\Controllers\Admin\MandorController::class,'create'])->name('tambah_mandor');
+        Route::post('/tambah_mandor_store',[\App\Http\Controllers\Admin\MandorController::class,'store'])->name('tambah_mandor_store');
+        Route::post('/delete_mandor/{id}',[\App\Http\Controllers\Admin\MandorController::class,'destroy'])->name('delete_mandor');
+        Route::get('/edit_mandor/{id}',[\App\Http\Controllers\Admin\MandorController::class,'edit'])->name('edit_mandor');
+        Route::post('/update_mandor',[\App\Http\Controllers\Admin\MandorController::class,'update'])->name('update_mandor');
     });
 });
 

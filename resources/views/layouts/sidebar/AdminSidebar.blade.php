@@ -61,12 +61,6 @@
         <span class="menu-header-text">Pages</span>
       </li>
       <li class="menu-item ">
-        <a href="{{ route('admin.donatur') }}" class="menu-link">
-          <i class="fa-solid fa-user-secret me-3"></i>
-          <div data-i18n="Analytics">Donatur</div>
-        </a>
-      </li>
-      <li class="menu-item ">
         <a href="{{ route('admin.kepala') }}" class="menu-link">
           <i class="fa-solid fa-user-tie me-3"></i>
           <div data-i18n="Analytics">Kepala</div>

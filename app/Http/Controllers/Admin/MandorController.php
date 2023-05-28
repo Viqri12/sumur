@@ -4,6 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\kepala;
+use App\Models\mandor;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class MandorController extends Controller
 {
@@ -14,7 +18,9 @@ class MandorController extends Controller
      */
     public function index()
     {
-        return view('admin.mandor.mandor');
+        $data = mandor::with('user')->get();
+        // return $data;
+        return view('admin.mandor.mandor',compact('data'));
     }
 
     /**
@@ -24,7 +30,8 @@ class MandorController extends Controller
      */
     public function create()
     {
-        //
+        $data = User::all();
+        return view('admin.mandor.tambah_mandor' ,compact('data'));
     }
 
     /**
@@ -35,7 +42,21 @@ class MandorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = $request->validate([
+           'name' => 'required',
+           'email' => 'required',
+           'password' => 'required',
+           'user_id' => 'required' 
+        ]);
+
+        $user = mandor::create([
+            'name' => $request->name ,
+            'email' => $request->email ,
+            'password' => hash::make('adminpassword'),
+            'user_id' => $request->user_id
+        ]);
+
+        return redirect('admin/mandor');
     }
 
     /**
@@ -57,7 +78,8 @@ class MandorController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = mandor::where('id',$id)->get();
+        return view('admin.mandor.edit_mandor',compact('data','id'));
     }
 
     /**
@@ -67,9 +89,21 @@ class MandorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $validator = $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required'
+        ]);
+
+        $ubah = mandor::where('id',$request->id)->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => $request->password
+        ]);
+
+        return redirect('admin/mandor');
     }
 
     /**
@@ -80,6 +114,7 @@ class MandorController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $delete = mandor::destroy($id);
+        return back();
     }
 }
