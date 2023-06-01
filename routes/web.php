@@ -53,10 +53,10 @@ Route::group(['prefix' => 'kepala', 'as' => 'kepala.'], function () {
 
 Route::group(['prefix' => 'mandor', 'as' => 'mandor.'], function () {
     Route::group(['middleware' => ['role:mandor', 'auth']], function () {
-        Route::get('/dashboard',[\App\Http\Controllers\Mandor\DashboardController::class,'index'])->name('dashboard');
-        Route::get('/tugas',[\App\Http\Controllers\Mandor\TugasController::class,'index'])->name('tugas');
-        Route::get('/riwayat_tugas',[\App\Http\Controllers\Mandor\RiwayatTugasController::class,'index'])->name('riwayat_tugas');
-        Route::get('/profile',[\App\Http\Controllers\Mandor\ProfileController::class,'index'])->name('profile');
+        Route::get('/dashboard',[\App\Http\Controllers\mandor\DashboardController::class,'index'])->name('dashboard');
+        Route::get('/tugas',[\App\Http\Controllers\mandor\TugasController::class,'index'])->name('tugas');
+        Route::get('/riwayat_tugas',[\App\Http\Controllers\mandor\RiwayatTugasController::class,'index'])->name('riwayat_tugas');
+        Route::get('/profile',[\App\Http\Controllers\mandor\ProfileController::class,'index'])->name('profile');
     });
 });
 
