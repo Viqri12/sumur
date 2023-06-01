@@ -14,7 +14,8 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        return view('kepala.profile');
+        $title = "Profile";
+        return view('kepala.profile',\compact('title'));
     }
 
     /**

@@ -8,7 +8,7 @@
     <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
       <!-- Search -->
       <div class="navbar-nav pt-2 align-items-center">
-       <h4>Dashboard</h4>
+       <h4>{{ $title }}</h4>
       </div>
       <!-- /Search -->
 

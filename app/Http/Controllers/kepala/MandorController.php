@@ -14,7 +14,8 @@ class MandorController extends Controller
      */
     public function index()
     {
-        return view('kepala.mandor');
+        $title= "Daftar Mandor";
+        return view('kepala.mandor',\compact('title'));
     }
 
     /**

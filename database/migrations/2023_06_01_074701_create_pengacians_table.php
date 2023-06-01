@@ -13,18 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('proses_tugas', function (Blueprint $table) {
+        Schema::create('pengacian', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('tugas_id');
-            $table->longText('awalan')->nullable();
-            $table->longText('kedalaman')->nullable();
-            $table->longText('penembokan')->nullable();
-            $table->longText('pengacian')->nullable();
-            $table->longText('keramik')->nullable();
-            $table->longText('cat')->nullable();
-            $table->longText('mesin')->nullable();
+            $table->string('keterangan');
+            $table->string('image');
             $table->foreign('tugas_id')->references('id')->on('tugas')->onDelete('cascade');
-            $table->longText('simulasi')->nullable();
             $table->timestamps();
         });
     }
@@ -36,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('proses_tugas');
+        Schema::dropIfExists('pengacians');
     }
 };

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('no_sumur')->nullable();
             $table->string('nama_donatur')->nullable();
             $table->integer('proses')->nullable();
+            $table->integer('status')->nullable();
             $table->text('alamat')->nullable();
             $table->foreign('kepala_id')->references('id')->on('kepala')->onDelete('cascade');
             $table->timestamps();

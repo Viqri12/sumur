@@ -14,7 +14,13 @@ class TugasController extends Controller
      */
     public function index()
     {
-        return view('kepala.tugas');
+        $title = "Tugas";
+        return view('kepala.tugas.tugas',compact('title'));
+    }
+
+    public function kirim_tugas(){
+        $title = "Kirim Tugas";
+        return view('kepala.tugas.kirim_tugas',compact('title'));
     }
 
     /**
@@ -26,6 +32,7 @@ class TugasController extends Controller
     {
         //
     }
+
 
     /**
      * Store a newly created resource in storage.
