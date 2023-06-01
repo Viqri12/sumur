@@ -14,9 +14,13 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-         <!-- Icons. Uncomment required icon fonts -->
-        <link rel="stylesheet" href="{{ asset('/assets/vendor/fonts/boxicons.css') }}" />
+         {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css"> --}}
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
 
+        <link rel="stylesheet" href="{{ asset('/assets/vendor/fonts/boxicons.css') }}" />
         <link rel="stylesheet" href="{{ asset('/assets/vendor/css/core.css') }}" class="template-customizer-core-css" />
         <link rel="stylesheet" href="{{ asset('/assets/vendor/css/theme-default.css') }}" class="template-customizer-theme-css" />
         <link rel="stylesheet" href="{{ asset('/assets/css/demo.css') }}" />
@@ -24,8 +28,6 @@
         <link rel="stylesheet" href="{{ asset('/assets/vendor/libs/apex-charts/apex-charts.css') }}" />
         <script src="{{ asset('/assets/vendor/js/helpers.js') }}"></script>
         <script src="{{ asset('/assets/js/config.js') }}"></script>
-        @include('sweetalert::alert')
-        {{-- <link rel="stylesheet" href="{{ asset('css/app.css')}}"> --}}
     </head>
     <body class="font-sans antialiased">
 
@@ -38,6 +40,9 @@
     <script src="{{ asset('js/app.js')}}"></script>
      <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
+
+
+
     <script src="{{ asset('/assets/vendor/libs/jquery/jquery.js') }}"></script>
     <script src="{{ asset('/assets/vendor/libs/popper/popper.js') }}"></script>
     <script src="{{ asset('/assets/vendor/js/bootstrap.js')}} "></script>

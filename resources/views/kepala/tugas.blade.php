@@ -42,10 +42,226 @@
                                   </h2>
 
                                   <div id="accordionOne{{$i+1}}" class="accordion-collapse {{ $i+1 == 1 ? 'collapse show' : 'collapse' }}" data-bs-parent="#accordionExample" style="">
-                                    <div class="accordion-body border m-2 rounded-3 p-2">
-                                      Lemon drops chocolate cake gummies carrot cake chupa chups muffin topping. Sesame snaps icing
-                                      marzipan gummi bears macaroon dragée danish caramels powder. Bear claw dragée pastry topping
-                                      soufflé. Wafer gummi bears marshmallow pastry pie.
+                                    <div class="accordion-body row border m-2 rounded-3 p-2 pr-2">
+                                        <div class="col-lg-6">
+                                            <section class="py-2 p-2">
+                                                <ul class="timeline  mb-2">
+                                                    <li class="timeline-item  mb-3">
+                                                        <h5 class="fw-bold mb-2">Awalan</h5>
+                                                        <p class=" text-muted mb-0">Proses penggalian tanah</p>
+                                                        <div class="row col-12 g-3 mb-0 mt-2">
+                                                            <div class="col-lg-4  col-6 text-center ">
+                                                                <img src="{{ asset('assets/img/elements/1.jpg') }}" class="rounded-2" style="object-fit: cover;object-position:center center;" height="100" alt="">
+                                                                <div>
+                                                                    <p>Macul.jpg</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4 col-6 text-center ">
+                                                                <img src="{{ asset('assets/img/elements/2.jpg') }}" class="rounded-2" style="object-fit: cover;object-position:center center;" height="100" alt="">
+                                                                <div>
+                                                                    <p>Macul.jpg</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4 col-6 text-center ">
+                                                                <img src="{{ asset('assets/img/elements/3.jpg') }}" class="rounded-2" style="object-fit: cover;object-position:center center;" height="100" alt="">
+                                                                <div>
+                                                                    <p>Macul.jpg</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <p class="text-muted mb-2 small">1 hari yang lalu</p>
+                                                    </li>
+
+                                                    <li class="timeline-item mb-3">
+                                                        <h5 class="fw-bold mb-2">Kedalaman</h5>
+                                                        <p class=" text-muted mb-0">Proses penggalian tanah</p>
+                                                        <div class="row g-3 mb-0 mt-2">
+                                                            <div class="col-lg-4 col-6 text-center ">
+                                                                <img src="{{ asset('assets/img/elements/1.jpg') }}" class="rounded-2" style="object-fit: cover;object-position:center center;" height="100" alt="">
+                                                                <div>
+                                                                    <p>Macul.jpg</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4 col-6 text-center ">
+                                                                <img src="{{ asset('assets/img/elements/2.jpg') }}" class="rounded-2" style="object-fit: cover;object-position:center center;" height="100" alt="">
+                                                                <div>
+                                                                    <p>Macul.jpg</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4 col-6 text-center ">
+                                                                <img src="{{ asset('assets/img/elements/3.jpg') }}" class="rounded-2" style="object-fit: cover;object-position:center center;" height="100" alt="">
+                                                                <div>
+                                                                    <p>Macul.jpg</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <p class="text-muted mb-2 small">1 hari yang lalu</p>
+                                                    </li>
+
+                                                    <li class="timeline-item mb-3">
+                                                        <h5 class="fw-bold mb-2">Penembokan</h5>
+                                                        <p class=" text-muted mb-0">Proses penggalian tanah</p>
+                                                        <div class="row g-3 mb-0 mt-2">
+                                                            <div class="col-lg-4 col-6 text-center ">
+                                                                <img src="{{ asset('assets/img/elements/1.jpg') }}" class="rounded-2" style="object-fit: cover;object-position:center center;" height="100" alt="">
+                                                                <div>
+                                                                    <p>Macul.jpg</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4 col-6 text-center ">
+                                                                <img src="{{ asset('assets/img/elements/2.jpg') }}" class="rounded-2" style="object-fit: cover;object-position:center center;" height="100" alt="">
+                                                                <div>
+                                                                    <p>Macul.jpg</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4 col-6 text-center ">
+                                                                <img src="{{ asset('assets/img/elements/3.jpg') }}" class="rounded-2" style="object-fit: cover;object-position:center center;" height="100" alt="">
+                                                                <div>
+                                                                    <p>Macul.jpg</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <p class="text-muted mb-2 small">1 hari yang lalu</p>
+                                                    </li>
+
+                                                    <li class="timeline-item mb-3">
+                                                        <h5 class="fw-bold mb-2">Pengacian</h5>
+                                                        <p class=" text-muted mb-0">Proses penggalian tanah</p>
+                                                        <div class="row g-3 mb-0 mt-2">
+                                                            <div class="col-lg-4 col-6 text-center ">
+                                                                <img src="{{ asset('assets/img/elements/1.jpg') }}" class="rounded-2" style="object-fit: cover;object-position:center center;" height="100" alt="">
+                                                                <div>
+                                                                    <p>Macul.jpg</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4 col-6 text-center ">
+                                                                <img src="{{ asset('assets/img/elements/2.jpg') }}" class="rounded-2" style="object-fit: cover;object-position:center center;" height="100" alt="">
+                                                                <div>
+                                                                    <p>Macul.jpg</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4 col-6 text-center ">
+                                                                <img src="{{ asset('assets/img/elements/3.jpg') }}" class="rounded-2" style="object-fit: cover;object-position:center center;" height="100" alt="">
+                                                                <div>
+                                                                    <p>Macul.jpg</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <p class="text-muted mb-2 small">1 hari yang lalu</p>
+                                                    </li>
+                                                </ul>
+                                            </section>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <section class="py-2 p-2 ">
+                                                <ul class="timeline  mb-2">
+                                                    <li class="timeline-item  mb-3">
+                                                        <h5 class="fw-bold mb-2">Awalan</h5>
+                                                        <p class=" text-muted mb-0">Proses penggalian tanah</p>
+                                                        <div class="row col-12 g-3 mb-0 mt-2">
+                                                            <div class="col-lg-4  col-6 text-center ">
+                                                                <img src="{{ asset('assets/img/elements/1.jpg') }}" class="rounded-2" style="object-fit: cover;object-position:center center;" height="100" alt="">
+                                                                <div>
+                                                                    <p>Macul.jpg</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4 col-6 text-center ">
+                                                                <img src="{{ asset('assets/img/elements/2.jpg') }}" class="rounded-2" style="object-fit: cover;object-position:center center;" height="100" alt="">
+                                                                <div>
+                                                                    <p>Macul.jpg</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4 col-6 text-center ">
+                                                                <img src="{{ asset('assets/img/elements/3.jpg') }}" class="rounded-2" style="object-fit: cover;object-position:center center;" height="100" alt="">
+                                                                <div>
+                                                                    <p>Macul.jpg</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <p class="text-muted mb-2 small">1 hari yang lalu</p>
+                                                    </li>
+
+                                                    <li class="timeline-item mb-3">
+                                                        <h5 class="fw-bold mb-2">Kedalaman</h5>
+                                                        <p class=" text-muted mb-0">Proses penggalian tanah</p>
+                                                        <div class="row g-3 mb-0 mt-2">
+                                                            <div class="col-lg-4 col-6 text-center ">
+                                                                <img src="{{ asset('assets/img/elements/1.jpg') }}" class="rounded-2" style="object-fit: cover;object-position:center center;" height="100" alt="">
+                                                                <div>
+                                                                    <p>Macul.jpg</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4 col-6 text-center ">
+                                                                <img src="{{ asset('assets/img/elements/2.jpg') }}" class="rounded-2" style="object-fit: cover;object-position:center center;" height="100" alt="">
+                                                                <div>
+                                                                    <p>Macul.jpg</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4 col-6 text-center ">
+                                                                <img src="{{ asset('assets/img/elements/3.jpg') }}" class="rounded-2" style="object-fit: cover;object-position:center center;" height="100" alt="">
+                                                                <div>
+                                                                    <p>Macul.jpg</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <p class="text-muted mb-2 small">1 hari yang lalu</p>
+                                                    </li>
+
+                                                    <li class="timeline-item mb-3">
+                                                        <h5 class="fw-bold mb-2">Penembokan</h5>
+                                                        <p class=" text-muted mb-0">Proses penggalian tanah</p>
+                                                        <div class="row g-3 mb-0 mt-2">
+                                                            <div class="col-lg-4 col-6 text-center ">
+                                                                <img src="{{ asset('assets/img/elements/1.jpg') }}" class="rounded-2" style="object-fit: cover;object-position:center center;" height="100" alt="">
+                                                                <div>
+                                                                    <p>Macul.jpg</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4 col-6 text-center ">
+                                                                <img src="{{ asset('assets/img/elements/2.jpg') }}" class="rounded-2" style="object-fit: cover;object-position:center center;" height="100" alt="">
+                                                                <div>
+                                                                    <p>Macul.jpg</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4 col-6 text-center ">
+                                                                <img src="{{ asset('assets/img/elements/3.jpg') }}" class="rounded-2" style="object-fit: cover;object-position:center center;" height="100" alt="">
+                                                                <div>
+                                                                    <p>Macul.jpg</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <p class="text-muted mb-2 small">1 hari yang lalu</p>
+                                                    </li>
+
+                                                    <li class="timeline-item mb-3">
+                                                        <h5 class="fw-bold mb-2">Pengacian</h5>
+                                                        <p class=" text-muted mb-0">Proses penggalian tanah</p>
+                                                        <div class="row g-3 mb-0 mt-2">
+                                                            <div class="col-lg-4 col-6 text-center ">
+                                                                <img src="{{ asset('assets/img/elements/1.jpg') }}" class="rounded-2" style="object-fit: cover;object-position:center center;" height="100" alt="">
+                                                                <div>
+                                                                    <p>Macul.jpg</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4 col-6 text-center ">
+                                                                <img src="{{ asset('assets/img/elements/2.jpg') }}" class="rounded-2" style="object-fit: cover;object-position:center center;" height="100" alt="">
+                                                                <div>
+                                                                    <p>Macul.jpg</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4 col-6 text-center ">
+                                                                <img src="{{ asset('assets/img/elements/3.jpg') }}" class="rounded-2" style="object-fit: cover;object-position:center center;" height="100" alt="">
+                                                                <div>
+                                                                    <p>Macul.jpg</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <p class="text-muted mb-2 small">1 hari yang lalu</p>
+                                                    </li>
+                                                </ul>
+                                            </section>
+                                        </div>
+                                        <!-- Section: Timeline -->
                                     </div>
                                   </div>
                                 </div>

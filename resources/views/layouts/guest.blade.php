@@ -55,7 +55,7 @@
         </div>
     </body>
     <script src="{{ asset('js/app.js')}}"></script>
-    
+    @include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
     <script src="{{ asset('/assets/vendor/libs/jquery/jquery.js') }}"></script>

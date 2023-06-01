@@ -13,13 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('kepala', function (Blueprint $table) {
+        Schema::create('tugas_mandor', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->string('alamat')->nullable();
-            $table->string('no_hp')->nullable();
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->unsignedBigInteger('tugas_id');
+            $table->unsignedBigInteger('mandor_id');
+            $table->string('keterangan');
+            $table->foreign('tugas_id')->references('id')->on('tugas')->onDelete('cascade');
+            $table->foreign('mandor_id')->references('id')->on('mandor')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kepala');
+        Schema::dropIfExists('tugas_mandors');
     }
 };
