@@ -8,6 +8,8 @@ use App\Models\kepala;
 use App\Models\mandor;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Spatie\Permission\Models\Role;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class MandorController extends Controller
 {
@@ -42,20 +44,30 @@ class MandorController extends Controller
      */
     public function store(Request $request)
     {
+        // return $request->name;
         $validator = $request->validate([
            'name' => 'required',
            'email' => 'required',
-           'password' => 'required',
-           'user_id' => 'required' 
+           'no_hp' => 'required',
+           'alamat' => 'required' 
         ]);
 
-        $user = mandor::create([
+        $user = User::create([
             'name' => $request->name ,
             'email' => $request->email ,
-            'password' => hash::make('adminpassword'),
-            'user_id' => $request->user_id
+            'password' => hash::make('adminpassword')
         ]);
+        
+        $user->assignRole('mandor');
 
+        $mandor = mandor::create([
+            'nama' => $request->name,
+            'user_id' => $user->id,
+            'no_hp' => $request->no_hp,
+            'alamat' => $request->alamat
+        ]);
+        
+        Alert::success('Berhasil','Data berhasil di tambahkan');
         return redirect('admin/mandor');
     }
 
@@ -78,7 +90,7 @@ class MandorController extends Controller
      */
     public function edit($id)
     {
-        $data = mandor::where('id',$id)->get();
+        $data = mandor::where('id',$id)->with('user')->first();
         return view('admin.mandor.edit_mandor',compact('data','id'));
     }
 
@@ -91,19 +103,27 @@ class MandorController extends Controller
      */
     public function update(Request $request)
     {
+        // return $request;
         $validator = $request->validate([
             'name' => 'required',
             'email' => 'required',
-            'password' => 'required'
-        ]);
+            'no_hp' => 'required',
+            'alamat' => 'required'
+        ]); 
+
+        $cek = mandor::where('id',$request->id)->first();
 
         $ubah = mandor::where('id',$request->id)->update([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => $request->password
+            'nama' => $request->name,
+            'no_hp' => $request->no_hp,
+            'alamat' => $request->alamat
         ]);
 
-        return redirect('admin/mandor');
+        $ubah_user = User::where('id',$cek->user_id)->update([
+            'name' => $request->name,
+        ]);
+
+        return redirect(route('admin.mandor'));
     }
 
     /**

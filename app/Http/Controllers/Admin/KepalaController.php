@@ -7,6 +7,7 @@ use App\Models\kepala;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Spatie\Permission\Models\Role;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class KepalaController extends Controller
@@ -54,6 +55,8 @@ class KepalaController extends Controller
             'email' => $request->email,
             'password' => hash::make('adminpassword'),
        ]);
+
+       $users->assignRole('kepala');
 
        $kepala = kepala::create([
          'nama' => $users->name,
@@ -107,7 +110,7 @@ class KepalaController extends Controller
             'alamat' => 'required',
        ]);
 
-        $cek = kelapa::where('id',$request->id)->first();
+        $cek = kepala::where('id',$request->id)->first();
 
         $update = kepala::where('id',$request->id)->update([
             'nama' => $request->name ,

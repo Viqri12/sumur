@@ -6,15 +6,16 @@
             @include('layouts.navbar.AdminNavbar')
             <div class="content-wrapper">
                 <div class="container">
-                  <div class="row p-4 mt-5">
+                  <div class="row p-4">
                       <div class="col-md-12 bg-white shadow table-responsive rounded-5">
-                          <a class="btn btn-primary mb-4 my-3" href="{{ route('admin.tambah_mandor') }}">Tambah Client</a>
+                          <a class="btn btn-primary mb-4 my-3" href="{{ route('admin.tambah_mandor') }}">Tambah Data</a>
                           <table class="table">
                               <thead>
                                 <tr>
                                   <th scope="col">No</th>
                                   <th scope="col">Nama</th>
                                   <th scope="col">Email</th>
+                                  <th scope="col">No Hp</th>
                                   <th scope="col">Action</th>
                                 </tr>
                               </thead>
@@ -22,9 +23,10 @@
                                   @php $no = 1; @endphp
                                   @foreach ($data as $item)
                                   <tr>
-                                      <th scope="row">{{$no++}}</th>
-                                      <td>{{$item->name}}</td>
-                                      <td>{{$item->email}}</td>
+                                      <th scope="row">{{ $loop->iteration }}</th>
+                                      <td>{{ $item->user->name }}</td>
+                                      <td>{{ $item->user->email }}</td>
+                                      <td>{{ $item->no_hp }}</td>
                                       <td class="d-flex justify-content-between align-items-center col-5 ">
                                         <a class="m-1" href="{{ route('admin.edit_mandor',$item->id)}}">
                                           <i class="fa-solid fa-pen-to-square"></i>

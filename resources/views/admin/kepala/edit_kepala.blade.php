@@ -10,7 +10,7 @@
                     <div class="row">
                         <div class="col-lg-6 bg-white">
                             <form class="mt-4" action="{{ route('admin.kepala_update')}}" method="POST">
-                                @csrf
+                                @csrf 
                                 <div class="col-12">
                                     <div class="mb-3">
                                         <label for="name" class="form-label">Nama</label>

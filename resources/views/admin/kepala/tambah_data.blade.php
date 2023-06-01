@@ -15,28 +15,35 @@
                                     <div class="mb-3">
                                         <label for="name" class="form-label">Nama</label>
                                         <input type="text" name="name" class="form-control" id="name" placeholder="Masukan Nama">
-                                        @error('name')<p class="small text-danger">{{$message}}</p>@enderror
+                                        @error('name')
+                                        <p class="small text-danger">{{$message}}</p>
+                                        @enderror
                                     </div>
                                     <div class="mb-3">
                                         <label for="nama" class="form-label">Email</label>
                                         <input type="email" name="email" class="form-control" id="Email1" aria-describedby="emailHelp" placeholder="Masukan email">
-                                        @error('email')<p class="small text-danger">{{$message}}</p>@enderror
+                                        @error('email')
+                                        <p class="small text-danger">{{$message}}</p>
+                                        @enderror
                                     </div>
                                     <div class="mb-3">
-                                        <label for="nama" class="form-label">No Ho</label>
+                                        <label for="nama" class="form-label">No Hp</label>
                                         <input type="number" name="no_hp" class="form-control" id="Email1" aria-describedby="emailHelp" placeholder="Nomor HP">
-                                        @error('no_hp')<p class="small text-danger">{{$message}}</p>@enderror
+                                        @error('no_hp')
+                                        <p class="small text-danger">{{$message}}
+                                        </p>@enderror
                                     </div>
                                     <div class="mb-3">
                                         <label for="alamat" class="form-label">Alamat</label>
                                         <textarea name="alamat" class="form-control" id="" cols="5" rows="6" placeholder="Alamat"></textarea>
-                                        @error('alamat')<p class="small text-danger">{{$message}}</p>@enderror
+                                        @error('alamat')
+                                        <p class="small text-danger">{{$message}}</p>
+                                        @enderror
                                     </div>
                                     <a href="{{ route('admin.kepala')}}" class="btn btn-light border mb-5">Batal</a>
                                    <button type="submit" class="btn ms-2 btn-primary mb-5">Simpan</button>
                                 </div>
                               </form>
-
                         </div>
                     </div>
                 </div>
