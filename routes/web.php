@@ -58,7 +58,7 @@ Route::group(['prefix' => 'mandor', 'as' => 'mandor.'], function () {
         Route::get('/tugas',[\App\Http\Controllers\mandor\TugasController::class,'index'])->name('tugas');
         Route::get('/riwayat_tugas',[\App\Http\Controllers\mandor\RiwayatTugasController::class,'index'])->name('riwayat_tugas');
         Route::get('/profile',[\App\Http\Controllers\mandor\ProfileController::class,'index'])->name('profile');
-        Route::get('upload_bukti',[\App\Http\Controllers\mandor\TugasController::class,'index'])->name('upload_bukti');
+        Route::get('upload_bukti',[\App\Http\Controllers\mandor\TugasController::class,'upload'])->name('upload_bukti');
     });
 });
 
