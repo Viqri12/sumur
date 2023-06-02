@@ -17,6 +17,11 @@ class TugasController extends Controller
         return view('mandor.tugas');
     }
 
+    public function upload()
+    {
+        return view('mandor.tugas.upload_bukti');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
