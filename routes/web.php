@@ -45,6 +45,7 @@ Route::group(['prefix' => 'kepala', 'as' => 'kepala.'], function () {
         Route::get('/donatur',[\App\Http\Controllers\kepala\DonaturController::class,'index'])->name('donatur');
         Route::get('/mandor',[\App\Http\Controllers\kepala\MandorController::class,'index'])->name('mandor');
         Route::get('/tugas',[\App\Http\Controllers\kepala\TugasController::class,'index'])->name('tugas');
+        Route::post('/kirim_tugas_mandor',[\App\Http\Controllers\kepala\TugasController::class,'create'])->name('send_tugas');
         Route::get('/kirim_tugas',[\App\Http\Controllers\kepala\TugasController::class,'kirim_tugas'])->name('kirim_tugas');
         Route::get('/role_akses',[\App\Http\Controllers\kepala\RoleAksesController::class,'index'])->name('role_akses');
         Route::get('/profile',[\App\Http\Controllers\kepala\ProfileController::class,'index'])->name('profile');
