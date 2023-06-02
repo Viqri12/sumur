@@ -3,8 +3,13 @@
 namespace App\Http\Controllers\Kepala;
 
 use App\Http\Controllers\Controller;
+use App\Models\kepala;
+use App\Models\mandor;
+use App\Models\TugasMandor;
+use App\Models\TugasModel;
+use App\Models\User;
 use Illuminate\Http\Request;
-
+use RealRashid\SweetAlert\Facades\Alert;
 class TugasController extends Controller
 {
     /**
@@ -20,7 +25,9 @@ class TugasController extends Controller
 
     public function kirim_tugas(){
         $title = "Kirim Tugas";
-        return view('kepala.tugas.kirim_tugas',compact('title'));
+        $mandor = mandor::with('user')->get();
+        // return $mandor;
+        return view('kepala.tugas.kirim_tugas',compact('title','mandor'));
     }
 
     /**
@@ -28,9 +35,41 @@ class TugasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        // return $request;
+        $validte = $request->validate([
+            'nama_donatur' => 'required',
+            'mandor' => 'required'
+        ]);
+
+        $cek = kepala::where('user_id',auth()->user()->id)->first();
+        // return $cek;
+        $nomor_sumur = $request->nomor_sumur;
+        if(!$request->nomor_sumur){
+            $getTugas = TugasModel::where('kepala_id',$cek->id)->latest()->first();
+            // return $getTugas;
+            if($getTugas){
+                $nomor_sumur = (int)$getTugas->no_sumur + 1;
+            }else{
+                $nomor_sumur = 1;
+            }
+        }
+
+        $create = TugasModel::create([
+            'kepala_id' => $cek->id,
+            'no_sumur' => $nomor_sumur,
+            'nama_donatur' => $request->nama_donatur,
+            'status' => 0,
+        ]);
+
+        $kirim = TugasMandor::create([
+            'mandor_id' => $request->mandor_id,
+            'tugas_id' => $create->id
+        ]);
+
+        Alert::success('Berhasil','Tugas berhasil di kirim');
+        return redirect('kepala/tugas');
     }
 
 

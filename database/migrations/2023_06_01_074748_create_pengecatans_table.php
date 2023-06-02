@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pengecatans', function (Blueprint $table) {
+        Schema::create('pengecatan', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('tugas_id');
-            $table->string('keterangan');
-            $table->string('image');
+            $table->string('keterangan')->nullable();
+            $table->string('image')->nullable();
             $table->foreign('tugas_id')->references('id')->on('tugas')->onDelete('cascade');
             $table->timestamps();
         });

@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\kepala;
+use App\Models\mandor;
 use App\Models\User as ModelsUser;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -24,21 +26,31 @@ class UserSeeder extends Seeder
             'name' => 'Admin',
             'email' => 'admin@gmail.com',
             'email_verified_at' => now(),
-            'password' => Hash::make('admin12') 
+            'password' => Hash::make('admin12')
         ]);
 
         $kepala = User::create([
             'name' => 'Kepala',
             'email' => 'kepala@gmail.com',
             'email_verified_at' => now(),
-            'password' => Hash::make('admin12') 
+            'password' => Hash::make('admin12')
         ]);
 
         $mandor = User::create([
             'name' => 'Mandor',
             'email' => 'mandor@gmail.com',
             'email_verified_at' => now(),
-            'password' => Hash::make('admin12') 
+            'password' => Hash::make('admin12')
+        ]);
+
+        kepala::create([
+            'nama' => $kepala->name,
+            'user_id' => $kepala->id
+        ]);
+
+        mandor::create([
+            'nama' => $mandor->name,
+            'user_id' => $mandor->id
         ]);
 
         Role::create([

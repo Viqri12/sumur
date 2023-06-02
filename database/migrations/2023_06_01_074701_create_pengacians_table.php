@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('pengacian', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('tugas_id');
-            $table->string('keterangan');
-            $table->string('image');
+            $table->string('keterangan')->nullable();
+            $table->string('image')->nullable();
             $table->foreign('tugas_id')->references('id')->on('tugas')->onDelete('cascade');
             $table->timestamps();
         });

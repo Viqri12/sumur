@@ -5,12 +5,6 @@
           <div class="layout-page">
             @include('layouts.navbar.KepalaNavbar')
             <div class="content-wrapper p-lg-4 p-2">
-                {{-- <ul>
-                    <li>Alamat</li>
-                    <li>Nama donatur</li>
-                    <li>nomor sumur</li>
-                    <li>cetak banner</li>
-                </ul> --}}
                 <div class="card p-lg-3 p-1">
                     <div>
                         <a href="{{ route('kepala.kirim_tugas') }}" class="btn btn-primary">

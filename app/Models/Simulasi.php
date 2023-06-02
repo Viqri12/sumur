@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Simulasi extends Model
 {
     use HasFactory;
+    protected $table ="awalan";
+    protected $fillable = ['tugas_id','keterangan','image'];
 }

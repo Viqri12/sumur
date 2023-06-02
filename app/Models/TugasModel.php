@@ -9,5 +9,5 @@ class TugasModel extends Model
 {
     use HasFactory;
     protected $table = "tugas";
-    protected $fillable = ['kepala_id','no_sumur','nama_donatur','proses','alamat'];
+    protected $fillable = ['kepala_id','no_sumur','nama_donatur','proses','alamat','status'];
 }
