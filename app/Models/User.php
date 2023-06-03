@@ -8,9 +8,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-use Spatie\Permission\Contracts\Role;
 use Spatie\Permission\Traits\HasRoles;
-
+use App\Models\kepala;
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable, HasRoles;
@@ -47,8 +46,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    // public function roles()
-    // {
-    //     // return $this->hasOne(HasRoles::class,'id','model_id');
-    // }
+    public function kepala()
+    {
+        return $this->hasOne(kepala::class,'id','user_id');
+    }
 }

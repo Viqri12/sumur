@@ -10,6 +10,7 @@ use App\Models\TugasModel;
 use App\Models\User;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
+
 class TugasController extends Controller
 {
     /**
@@ -20,14 +21,22 @@ class TugasController extends Controller
     public function index()
     {
         $title = "Tugas";
-        return view('kepala.tugas.tugas',compact('title'));
+        $kepala = kepala::where('user_id',auth()->user()->id)->first();
+        $tugas = TugasMandor::with('tugas')->whereHas('tugas',function($q) use ($kepala){
+            $q->where('kepala_id',$kepala->id);
+        })->get();
+        // return $tugas;
+        return view('kepala.tugas.tugas',compact('title','tugas'));
     }
 
     public function kirim_tugas(){
         $title = "Kirim Tugas";
+        // return auth()->user();
+        $cek = kepala::where('user_id',auth()->user()->id)->first();
+        $getTugas = TugasModel::where('kepala_id',$cek->id)->latest()->first();
         $mandor = mandor::with('user')->get();
         // return $mandor;
-        return view('kepala.tugas.kirim_tugas',compact('title','mandor'));
+        return view('kepala.tugas.kirim_tugas',compact('title','mandor','getTugas'));
     }
 
     /**
