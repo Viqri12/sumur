@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('tugas_id');
             $table->unsignedBigInteger('mandor_id');
+            $table->integer('status');
             $table->string('keterangan')->nullable();
             $table->foreign('tugas_id')->references('id')->on('tugas')->onDelete('cascade');
             $table->foreign('mandor_id')->references('id')->on('mandor')->onDelete('cascade');

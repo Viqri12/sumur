@@ -14,7 +14,8 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('mandor.dashboard');
+        $title = "Dashboard";
+        return view('mandor.dashboard',compact('title'));
     }
 
     /**

@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('tugas', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('kepala_id');
-            $table->integer('no_sumur')->nullable();
+            $table->string('no_sumur')->nullable();
             $table->string('nama_donatur')->nullable();
             $table->integer('proses')->nullable();
             $table->integer('status')->nullable();

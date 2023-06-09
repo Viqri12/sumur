@@ -24,7 +24,7 @@ class TugasController extends Controller
         $kepala = kepala::where('user_id',auth()->user()->id)->first();
         $tugas = TugasMandor::with('tugas')->whereHas('tugas',function($q) use ($kepala){
             $q->where('kepala_id',$kepala->id);
-        })->get();
+        })->latest()->get();
         // return $tugas;
         return view('kepala.tugas.tugas',compact('title','tugas'));
     }
@@ -54,8 +54,8 @@ class TugasController extends Controller
 
         $cek = kepala::where('user_id',auth()->user()->id)->first();
         // return $cek;
-        $nomor_sumur = $request->nomor_sumur;
-        if(!$request->nomor_sumur){
+        $nomor_sumur = $request->no_sumur;
+        if(!$request->no_sumur){
             $getTugas = TugasModel::where('kepala_id',$cek->id)->latest()->first();
             // return $getTugas;
             if($getTugas){
@@ -69,12 +69,12 @@ class TugasController extends Controller
             'kepala_id' => $cek->id,
             'no_sumur' => $nomor_sumur,
             'nama_donatur' => $request->nama_donatur,
-            'status' => 0,
         ]);
 
         $kirim = TugasMandor::create([
             'mandor_id' => $request->mandor_id,
-            'tugas_id' => $create->id
+            'tugas_id' => $create->id,
+            'status' => 0,
         ]);
 
         Alert::success('Berhasil','Tugas berhasil di kirim');

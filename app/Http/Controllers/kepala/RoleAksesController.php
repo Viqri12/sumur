@@ -14,7 +14,8 @@ class RoleAksesController extends Controller
      */
     public function index()
     {
-        return view('kepala.roleAkses');
+        $title = "";
+        return view('kepala.roleAkses',compact('title'));
     }
 
     /**

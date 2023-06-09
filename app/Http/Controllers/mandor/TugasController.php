@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\mandor;
 
 use App\Http\Controllers\Controller;
+use App\Models\mandor;
+use App\Models\TugasMandor;
+use App\Models\TugasModel;
 use Illuminate\Http\Request;
 
 class TugasController extends Controller
@@ -14,12 +17,17 @@ class TugasController extends Controller
      */
     public function index()
     {
-        return view('mandor.tugas');
+        $title = "Tugas Saya";
+        $mandor = mandor::where('user_id',auth()->user()->id)->first();
+        $tugas = TugasMandor::where('mandor_id',$mandor->id)->with('tugas')->latest()->get();
+        // return $tugas;
+        return view('mandor.tugas',compact('title','tugas'));
     }
 
     public function upload()
     {
-        return view('mandor.tugas.upload_bukti');
+        $title = "Upload bukti tugas";
+        return view('mandor.tugas.upload_bukti',compact('title'));
     }
 
     /**
@@ -30,6 +38,19 @@ class TugasController extends Controller
     public function create()
     {
         //
+    }
+
+    public function tolak_tugas($id){
+        $update = TugasMandor::where('id',$id)->update([
+            'status' => 3
+        ]);
+
+        return back();
+    }
+
+    public function terima_tugas(Request $request){
+
+        // $update = TugasMandor::where('')
     }
 
     /**
