@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Kepala;
 
 use App\Http\Controllers\Controller;
+use App\Models\kepala;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ProfileController extends Controller
@@ -15,7 +17,8 @@ class ProfileController extends Controller
     public function index()
     {
         $title = "Profile";
-        return view('kepala.profile',\compact('title'));
+        $kepala = kepala::where('user_id' ,auth()->user()->id)->first();
+        return view('kepala.profile',compact('title','kepala'));
     }
 
     /**
@@ -68,9 +71,42 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        {
+            // return $request;
+            $validator = $request->validate([
+                'name' => 'required',
+                'no_hp' => 'required',
+                'alamat' => 'required',
+            ]);
+    
+            $mandor = kepala::where('user_id',auth()->user()->id)->update([
+                'nama' => $request->name,
+                'no_hp' => $request->no_hp,
+                'alamat' => $request->alamat
+            ]);
+            
+            if($request->file('image')){
+                $foto = $request->file('image')->getClientOriginalName();
+                $request->image->storeAs('post-images',$foto,'public');
+                
+                $user = User::where('id',auth()->user()->id)->update([
+                    'name' => $request->name, 
+                    'image' => $foto,
+                    'no_hp' => $request->no_hp
+                ]);
+            }else{
+                $user = User::where('id',auth()->user()->id)->update([
+                    'name' => $request->name,
+                    'no_hp' => $request->no_hp
+                ]);
+            }
+            // return $foto;
+    
+    
+            return redirect('kepala/profile');
+        }
     }
 
     /**
