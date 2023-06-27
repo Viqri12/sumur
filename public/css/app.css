@@ -1232,6 +1232,9 @@ select {
 .text-center {
   text-align: center;
 }
+.text-start {
+  text-align: start;
+}
 .align-middle {
   vertical-align: middle;
 }

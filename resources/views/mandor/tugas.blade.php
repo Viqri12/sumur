@@ -25,8 +25,8 @@
                                                 </div>
                                                 <div class="ms-auto me-lg-3">
                                                     @if($item->status == 1)
-                                                        <a href="{{ route('mandor.upload_bukti')}}" class="btn btn-primary btn-sm">
-                                                            Detail
+                                                        <a href="{{ route('mandor.upload_bukti',$item->id)}}" class="btn btn-primary btn-sm">
+                                                            <span>Detail</span>
                                                             <i class="fas fa-arrow-right ms-2"></i>
                                                         </a>
                                                     @endif
@@ -105,18 +105,18 @@
                                 <h5 class="modal-title" id="exampleModalLabel">Tolak Tugas</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                                <div class="modal-body text-center p-2">
-                                  <h4 class="fw-bold mb-1">Anda yakin?</h4>
-                                  <p>Untuk menolak tugas ini.</p>
+                                <div class="modal-body  p-3">
+                                  <h4 class="fw-bold mb-1 text-center">Anda yakin?</h4>
+                                  <p class="text-center">Untuk menolak tugas ini.</p>
                                   <form action="">
                                       <div class="form-gorup">
                                           <input type="hidden">
-                                          <label for="" class="form-label">Masukan alasan</label>
+                                          <label for="" class="form-label text-start">Masukan alasan</label>
                                           <textarea name="alasan" class="form-control" id="" rows="3" placeholder="Masukan alasan anda"></textarea>
                                       </div>
-                                      <div class="mb-2">
+                                      <div class="my-2 d-flex justify-content-end">
                                           <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Batal</button>
-                                          <button type="submit" class="btn btn-sm btn-primary">Yakin</button>
+                                          <button type="submit" class="btn btn-sm btn-primary ms-2">Yakin</button>
                                       </div>
                                   </form>
                                 </div>

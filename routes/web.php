@@ -60,7 +60,10 @@ Route::group(['prefix' => 'mandor', 'as' => 'mandor.'], function () {
         Route::get('/profile',[\App\Http\Controllers\mandor\ProfileController::class,'index'])->name('profile');
         Route::post('/terima_tugas',[\App\Http\Controllers\mandor\TugasController::class,'terima_tugas'])->name('terima_tugas');
         Route::post('/tolak_tugas',[\App\Http\Controllers\mandor\TugasController::class,'tolak_tugas'])->name('tolak_tugas');
-        Route::get('/upload_bukti',[\App\Http\Controllers\mandor\TugasController::class,'upload'])->name('upload_bukti');
+        Route::get('/upload_bukti/{id}',[\App\Http\Controllers\mandor\TugasController::class,'upload'])->name('upload_bukti');
+        Route::post('/update_profile',[\App\Http\Controllers\mandor\ProfileController::class,'update'])->name('update_profile');
+        Route::get('/get_tugas/{id}',[\App\Http\Controllers\mandor\TugasController::class,'get_tugas'])->name('get_tugas');
+        Route::post('/upload_awalan',[\App\Http\Controllers\mandor\TugasController::class,'upload_awalan'])->name('upload_awalan');
     });
 });
 

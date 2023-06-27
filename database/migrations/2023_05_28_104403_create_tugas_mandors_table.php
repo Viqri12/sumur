@@ -19,6 +19,7 @@ return new class extends Migration
             $table->unsignedBigInteger('mandor_id');
             $table->integer('status');
             $table->string('keterangan')->nullable();
+            $table->string('alasan')->nullable();
             $table->foreign('tugas_id')->references('id')->on('tugas')->onDelete('cascade');
             $table->foreign('mandor_id')->references('id')->on('mandor')->onDelete('cascade');
             $table->timestamps();

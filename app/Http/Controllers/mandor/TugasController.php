@@ -24,20 +24,22 @@ class TugasController extends Controller
         return view('mandor.tugas',compact('title','tugas'));
     }
 
-    public function upload()
+    public function upload($id)
     {
         $title = "Upload bukti tugas";
-        return view('mandor.tugas.upload_bukti',compact('title'));
+        return view('mandor.tugas.upload_bukti',compact('title','id'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function get_tugas($id){
+        $tugas = TugasMandor::where('id',$id)->with('tugas')->latest()->get();
+        return $tugas;
+    }
+
+
+
+    public function upload_awalan(Request $request)
     {
-        //
+        dd($request);
     }
 
     public function tolak_tugas($id){

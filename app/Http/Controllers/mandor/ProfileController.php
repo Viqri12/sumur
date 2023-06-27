@@ -16,10 +16,10 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        // $user = User::where('id',auth())->first();
+       $title = "Profile";
         $mandor = mandor::where('user_id' ,auth()->user()->id)->first();
         // return $mandor;
-        return view('mandor.profile',compact('mandor'));
+        return view('mandor.profile',compact('mandor','title'));
     }
 
     /**
@@ -86,13 +86,13 @@ class ProfileController extends Controller
             'no_hp' => $request->no_hp,
             'alamat' => $request->alamat
         ]);
-        
+
         if($request->file('image')){
             $foto = $request->file('image')->getClientOriginalName();
             $request->image->storeAs('post-images',$foto,'public');
-            
+
             $user = User::where('id',auth()->user()->id)->update([
-                'name' => $request->name, 
+                'name' => $request->name,
                 'image' => $foto,
                 'no_hp' => $request->no_hp
             ]);
