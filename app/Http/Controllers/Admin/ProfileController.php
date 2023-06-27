@@ -16,8 +16,9 @@ class ProfileController extends Controller
     public function index()
     {
         $profile = User::where('id',1)->first();
+        $title = "Profile";
         // return $profile;
-        return view('admin.profile.profile',compact('profile'));
+        return view('admin.profile.profile',compact('profile','title'));
     }
 
     /**
@@ -38,18 +39,7 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg|',
-           ]);
-        //   dd($request->file);
-           $foto = $request->image->getClientOriginalName();
-           $request->image->storeAs('post-images',$foto);
-    
-           $update = User::where('id',1)->update([
-            'image' => $foto
-        ]);
-    
-        return back();
+        //
     }
 
     /**
@@ -81,9 +71,37 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        {
+            // return $request;
+            // dd($request);
+            $validator = $request->validate([
+                'name' => 'required',
+                'no_hp' => 'required',
+                'alamat' => 'required',
+            ]);
+            
+            if($request->file('image')){
+                $foto = $request->file('image')->getClientOriginalName();
+                $request->image->storeAs('post-images',$foto,'public');
+                
+                $user = User::where('id',auth()->user()->id)->update([
+                    'name' => $request->name, 
+                    'image' => $foto,
+                    'no_hp' => $request->no_hp
+                ]);
+            }else{
+                $user = User::where('id',auth()->user()->id)->update([
+                    'name' => $request->name,
+                    'no_hp' => $request->no_hp
+                ]);
+            }
+            // return $foto;
+    
+    
+            return redirect('admin/profile');
+        }
     }
 
     /**

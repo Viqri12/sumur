@@ -35,7 +35,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::get('/edit_mandor/{id}',[\App\Http\Controllers\Admin\MandorController::class,'edit'])->name('edit_mandor');
         Route::post('/update_mandor',[\App\Http\Controllers\Admin\MandorController::class,'update'])->name('update_mandor');
         Route::get('/profile',[\App\Http\Controllers\Admin\ProfileController::class,'index'])->name('profile');
-        Route::post('/update_profile',[\App\Http\Controllers\Admin\ProfileController::class,'store'])->name('update_profile');
+        Route::post('/update_profile',[\App\Http\Controllers\Admin\ProfileController::class,'update'])->name('update_profile');
     });
 });
 
@@ -49,6 +49,7 @@ Route::group(['prefix' => 'kepala', 'as' => 'kepala.'], function () {
         Route::get('/kirim_tugas',[\App\Http\Controllers\kepala\TugasController::class,'kirim_tugas'])->name('kirim_tugas');
         Route::get('/role_akses',[\App\Http\Controllers\kepala\RoleAksesController::class,'index'])->name('role_akses');
         Route::get('/profile',[\App\Http\Controllers\kepala\ProfileController::class,'index'])->name('profile');
+        Route::post('update_foto',[\App\Http\Controllers\kepala\ProfileController::class,'update'])->name('update_foto');
     });
 });
 
